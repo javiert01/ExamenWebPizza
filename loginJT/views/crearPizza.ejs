@@ -6,18 +6,20 @@
     <p>Precio:$<%= ingredientes[i].precio %></p>
   </div>
   <% } %>
-  <input type="submit" value="Submit">
+  <button onclick="calcularPrecioTotal()">LISTO!</button>
 </div>
 <script>
-  var precioTotal = 0;
   function calcularPrecioTotal(){
+    var precioTotal = 0;
     for(var j=0; j<ingredientes.length; j++){
-      if(document.getElementById("ingrediente"+j+"").checked){
-        precioTotal = precioTotal + ingredientes.precioTotal;
+      if(document.getElementById("ingrediente"+j.toString()).checked){
+        precioTotal = precioTotal + ingredientes[j].precio;
       }
     }
+   document.getElementById("precioTotal").innerHTML=precioTotal.toString();
   }
 </script>
 
 <h2>Precio Total: </h2>
+<h3 id="precioTotal"></h3> 
 
