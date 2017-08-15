@@ -42,6 +42,7 @@ module.exports.routes = {
   'get /auth/:provider/callback': 'AuthController.callback',
 
   'get /': 'VistaController.homepage',
+  'get /crearPizza': 'TipoIngredienteController.crearPizza'
 
   /***************************************************************************
   *                                                                          *
