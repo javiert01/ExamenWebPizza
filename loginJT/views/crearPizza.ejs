@@ -2,9 +2,22 @@
 <div class="row">
   <% for(var i=0; i<ingredientes.length; i++) {%>
   <div class="col-sm-3">
-    <input type="checkbox" name="ingredientes" value=""><%= ingredientes[i].descripcion %><br>
+    <input type="checkbox" name="ingredientes" id="ingrediente<%=i.toString()%>"><%= ingredientes[i].descripcion %><br>
+    <p>Precio:$<%= ingredientes[i].precio %></p>
   </div>
   <% } %>
   <input type="submit" value="Submit">
 </div>
+<script>
+  var precioTotal = 0;
+  function calcularPrecioTotal(){
+    for(var j=0; j<ingredientes.length; j++){
+      if(document.getElementById("ingrediente"+j+"").checked){
+        precioTotal = precioTotal + ingredientes.precioTotal;
+      }
+    }
+  }
+</script>
+
+<h2>Precio Total: </h2>
 
